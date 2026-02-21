@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap');
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { font-size: 15px; }
+
+body {
+  font-family: 'Syne', sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+/* ── CSS Variables (Dark theme default) ── */
+:root {
+  --bg:          #0a0a0f;
+  --surface:     #13131a;
+  --card:        #1a1a24;
+  --border:      #2a2a3a;
+  --text:        #e8e8f0;
+  --muted:       #6b6b8a;
+  --accent:      #7c6af7;
+  --accent-h:    #9080ff;
+  --accent-soft: #7c6af720;
+  --success:     #22c87a;
+  --danger:      #f74a4a;
+  --warning:     #f7a94a;
+}
+
+:root[data-theme="light"] {
+  --bg:          #f0f0f8;
+  --surface:     #ffffff;
+  --card:        #f8f8ff;
+  --border:      #d0d0e0;
+  --text:        #1a1a2e;
+  --muted:       #7070a0;
+  --accent:      #5b4de0;
+  --accent-h:    #7c6af7;
+  --accent-soft: #5b4de020;
+  --success:     #16a05a;
+  --danger:      #d43535;
+  --warning:     #d48a00;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+input, button, select, textarea {
+  font-family: inherit;
+}
+
+code, pre {
+  font-family: 'Space Mono', monospace;
+}
+
+/* ── Utility classes ── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.surface {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.code-block {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  font-size: 12px;
+  color: var(--accent);
+  overflow-x: auto;
+  line-height: 1.8;
+}
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.flex   { display: flex; }
+.flex-col { display: flex; flex-direction: column; }
+.gap-8  { gap: 8px; }
+.gap-12 { gap: 12px; }
+.gap-16 { gap: 16px; }
+.gap-24 { gap: 24px; }
+
+/* ── Progress animation for async thunk demo ── */
+@keyframes progress {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
